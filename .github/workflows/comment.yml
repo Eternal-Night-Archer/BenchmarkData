@@ -24,7 +24,7 @@ jobs:
         with: 
           app_id: 295785
           installation_id: 34411676
-          private_key: ${{ secrets.PAT }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
       #-
       #  name: Create comment on ${{ github.event.inputs.repository }} - ${{ github.event.inputs.pr_id }}
       #  uses: mshick/add-pr-comment@v2
