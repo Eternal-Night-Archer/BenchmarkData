@@ -18,6 +18,13 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.repository != '' && github.event.inputs.pr_id != '' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Create GitHub App Installation Token
+        uses: jnwng/github-app-installation-token-action@v2
+        with:
+          appId: 295785
+          installationId: 39974503
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+
       - name: GitHub App installation access token generator
         uses: navikt/github-app-token-generator@v1.0.4
         with:
